@@ -1,6 +1,6 @@
 ﻿using DirdGroupTest.DTO;
 using DirdGroupTest.Models;
-using DirdGroupTest.Service.Repository;
+using DirdGroupTest.Service.Interface.Manager;
 using Microsoft.EntityFrameworkCore;
 
 namespace DirdGroupTest.Service.ServiceRepo
@@ -8,7 +8,7 @@ namespace DirdGroupTest.Service.ServiceRepo
     public class EmployeeRepo : IEmployeeRepo
     {
         public readonly ApplicationDbContext _context;
-        public EmployeeRepo(ApplicationDbContext context, IEmployeeRepo employeeRepo)
+        public EmployeeRepo(ApplicationDbContext context)
         {
             _context = context;
         }
@@ -38,8 +38,8 @@ namespace DirdGroupTest.Service.ServiceRepo
         {
             var data = await _context.Employees.Where(x => x.EmployeeId == Id).FirstOrDefaultAsync();
             //_context.Employees.Remove(_context.Employees.FirstOrDefault());
-            _context.Employees.Remove(data);
-            _context.SaveChangesAsync();
+             _context.Employees.Remove(data);
+             await _context.SaveChangesAsync();
             return new MessageHelper()
             {
                 Message = "Deleted Successfully",

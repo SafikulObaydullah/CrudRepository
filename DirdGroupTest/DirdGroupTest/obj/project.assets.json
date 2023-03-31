@@ -46,6 +46,18 @@
           }
         }
       },
+      "EF.Core.Repository/1.0.0.2": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.EntityFrameworkCore": "3.1.10"
+        },
+        "compile": {
+          "lib/netcoreapp3.1/EF.Core.Repository.dll": {}
+        },
+        "runtime": {
+          "lib/netcoreapp3.1/EF.Core.Repository.dll": {}
+        }
+      },
       "Humanizer.Core/2.14.1": {
         "type": "package",
         "compile": {
@@ -1278,6 +1290,23 @@
         "azureicon.png",
         "lib/netstandard2.0/Azure.Identity.dll",
         "lib/netstandard2.0/Azure.Identity.xml"
+      ]
+    },
+    "EF.Core.Repository/1.0.0.2": {
+      "sha512": "27Z3Nr/yjvcuxl0wgHp3ScZmwbxi7NOtQXLXaxuCNzPFg9js8B7OG/YO2JFYqYrJHDtRcY0p1kc8jWOEdcbAaQ==",
+      "type": "package",
+      "path": "ef.core.repository/1.0.0.2",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "EF Repository Core.png",
+        "ef.core.repository.1.0.0.2.nupkg.sha512",
+        "ef.core.repository.nuspec",
+        "lib/netcoreapp2.0/EF.Core.Repository.dll",
+        "lib/netcoreapp2.1/EF.Core.Repository.dll",
+        "lib/netcoreapp2.2/EF.Core.Repository.dll",
+        "lib/netcoreapp3.0/EF.Core.Repository.dll",
+        "lib/netcoreapp3.1/EF.Core.Repository.dll"
       ]
     },
     "Humanizer.Core/2.14.1": {
@@ -3903,6 +3932,7 @@
   },
   "projectFileDependencyGroups": {
     "net7.0": [
+      "EF.Core.Repository >= 1.0.0.2",
       "Microsoft.AspNetCore.OpenApi >= 7.0.3",
       "Microsoft.EntityFrameworkCore >= 7.0.4",
       "Microsoft.EntityFrameworkCore.SqlServer >= 7.0.4",
@@ -3916,11 +3946,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Angular\\CRUD\\DirdGroupTest\\DirdGroupTest\\DirdGroupTest.csproj",
+      "projectUniqueName": "D:\\Angular\\CRUD\\CrudRepository\\DirdGroupTest\\DirdGroupTest\\DirdGroupTest.csproj",
       "projectName": "DirdGroupTest",
-      "projectPath": "D:\\Angular\\CRUD\\DirdGroupTest\\DirdGroupTest\\DirdGroupTest.csproj",
+      "projectPath": "D:\\Angular\\CRUD\\CrudRepository\\DirdGroupTest\\DirdGroupTest\\DirdGroupTest.csproj",
       "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
-      "outputPath": "D:\\Angular\\CRUD\\DirdGroupTest\\DirdGroupTest\\obj\\",
+      "outputPath": "D:\\Angular\\CRUD\\CrudRepository\\DirdGroupTest\\DirdGroupTest\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\User\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -3949,6 +3979,10 @@
       "net7.0": {
         "targetAlias": "net7.0",
         "dependencies": {
+          "EF.Core.Repository": {
+            "target": "Package",
+            "version": "[1.0.0.2, )"
+          },
           "Microsoft.AspNetCore.OpenApi": {
             "target": "Package",
             "version": "[7.0.3, )"

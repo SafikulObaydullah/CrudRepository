@@ -1,4 +1,5 @@
 using DirdGroupTest.Models;
+using DirdGroupTest.Service.Interface.Manager;
 using DirdGroupTest.Service.Repository;
 using DirdGroupTest.Service.ServiceRepo;
 using Microsoft.EntityFrameworkCore;
@@ -15,7 +16,8 @@ builder.Services.AddDbContext<ApplicationDbContext>(options =>
 {
    options.UseSqlServer(builder.Configuration.GetConnectionString("DevConnection"));
 });
-builder.Services.AddScoped<IEmployeeRepo, EmployeeRepo>();
+builder.Services.AddTransient<IEmployeeRepo,EmployeeRepo>();   
+//builder.Services.AddScoped<IEmployeeManager, EmployeeManager>();
 //builder.Services.AddControllers();
 builder.Services.AddCors(x => x.AddPolicy("MyPolicy", builder =>
 {
